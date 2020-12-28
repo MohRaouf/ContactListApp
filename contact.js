@@ -95,8 +95,8 @@ function constructRecord(contact) {
 function modifyRecord(contact,index){
     var selectedContact = document.getElementById(index);
     selectedContact.children[0].innerHTML=contact.name;
-    selectedContact.children[1].innerHTML=contact.email;
-    selectedContact.children[2].innerHTML=contact.phone;
+    selectedContact.children[1].innerHTML=contact.phone;
+    selectedContact.children[2].innerHTML=contact.email;
 }
 
 //Populate the Contact info in the inputs to modify
