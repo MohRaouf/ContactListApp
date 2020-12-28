@@ -97,6 +97,7 @@ function modifyRecord(contact,index){
     selectedContact.children[0].innerHTML=contact.name;
     selectedContact.children[1].innerHTML=contact.phone;
     selectedContact.children[2].innerHTML=contact.email;
+    editMode=-1;
 }
 
 //Populate the Contact info in the inputs to modify
