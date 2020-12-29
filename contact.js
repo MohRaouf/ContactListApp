@@ -22,11 +22,14 @@ class ContactList {
             this.contacts.splice(index, 1);
         }
     }
-    editContact(id,newContact){
-        var index =this.contacts.findIndex(el => el.id == id);
+    editContact(idx,newContact){
+        var index =this.contacts.findIndex(el => el.id == idx);
+        console.log(`final index to modify = ${index}`);
         if (index !== -1) {
-            this.contacts[index]=newContact;
-            modifyRecord(newContact,id);
+            this.contacts[index].name=newContact.name;
+            this.contacts[index].email=newContact.email;
+            this.contacts[index].phone=newContact.phone;
+            modifyRecord(newContact,idx);
         }
     }
 }
@@ -123,6 +126,7 @@ function ModifyContact() {
         var phoneNo = document.getElementById("phoneInput").value;
         if(validateEmail(email) && phoneNo.length > 10 && name != ""){
             contactList.editContact(editMode,new Contact(name, phoneNo, email)); 
+            console.log("Take the input values and fire the editContact in the Class")
         }
     }
 }
